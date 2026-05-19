@@ -212,9 +212,58 @@ docker run -p 3000:3000 hello-app
 
 ---
 
+## 🎓 Training recap — GH-300 (May 19, 2026)
+
+A quick reference of what we covered during the session.
+
+### Day overview
+
+| # | Module                                          | Key takeaways                                                                 |
+| - | ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| 1 | **Introduction to GitHub Copilot**              | What Copilot is, how LLMs power suggestions, plans (Individual / Business / Enterprise), data handling |
+| 2 | **Setup & first suggestions**                   | Installing the extensions in VS Code, signing in, accepting/cycling ghost-text suggestions |
+| 3 | **Prompt engineering for Copilot**              | Comment-driven prompts, the "context window", why specificity matters         |
+| 4 | **Copilot Chat surfaces**                       | Side-panel Chat, Inline Chat (`Ctrl+I`), Quick Chat, Agent mode               |
+| 5 | **Slash commands & context variables**          | `/explain`, `/fix`, `/tests`, `/doc`, `#file:`, `#selection`, `#codebase`, `@workspace`, `@terminal` |
+| 6 | **Generating and running tests**                | Producing Jest + supertest tests for `hello-app`, running `npm test`          |
+| 7 | **Refactoring & debugging with Copilot**        | Extracting helpers, fixing failing tests, interpreting stack traces           |
+| 8 | **Documentation & code understanding**          | `/explain` walkthroughs, JSDoc generation, drafting READMEs                   |
+| 9 | **Agent mode & multi-file edits**               | Letting Copilot read, edit, and run terminal commands across the workspace    |
+| 10 | **CI/CD with GitHub Actions**                  | Authoring the `ci.yml` workflow, build → lint → compile → test stages         |
+| 11 | **Deployment to Azure App Service**            | `az webapp up`, publish profiles, wiring deploy into the workflow             |
+| 12 | **Responsible use & best practices**           | Reviewing suggestions, license/IP awareness, security considerations, when *not* to trust Copilot |
+
+### Hands-on labs we completed
+
+1. **Lab 1 — Scaffolded `hello-app`** with Copilot-generated routes and verified with `npm start`.
+2. **Lab 2 — Added a new API endpoint** (`/api/cities/:code`) using comment-driven prompting and Inline Chat.
+3. **Lab 3 — Generated Jest tests** for `src/routes/worldmap.js` and brought the suite to green.
+4. **Lab 4 — Refactored** the weather lookup into a reusable helper module.
+5. **Lab 5 — Authored this `README.md`** end-to-end with Copilot Chat.
+6. **Lab 6 — Created the GitHub Actions workflow** at [.github/workflows/ci.yml](.github/workflows/ci.yml).
+7. **Lab 7 — Prepared the Azure deployment** path (kept commented in the workflow for later activation).
+
+### Top lessons learned
+
+- **Treat Copilot as a pair, not an oracle.** Always read, run, and test the code it produces.
+- **Context is everything.** Open the right files and use `#file:` / `#codebase` to ground suggestions.
+- **Small, specific prompts beat big vague ones.** Iterate in short cycles.
+- **Tests are your safety net.** Pair every Copilot-generated change with a Copilot-generated test, then run it.
+- **Use the right surface for the job:** completions for flow, Inline Chat for local edits, Chat for design questions, Agent mode for multi-file work.
+- **Don't commit secrets.** Use `.env.example` + GitHub Action secrets for keys like `AZURE_MAPS_KEY` or publish profiles.
+
+### Suggested next steps for practice
+
+- Enable the commented-out `deploy` job in [.github/workflows/ci.yml](.github/workflows/ci.yml) and ship `hello-app` to Azure.
+- Add a new route (e.g. `/api/timezone`) using only Copilot — comments first, then `/tests`.
+- Convert the project to TypeScript with Agent mode and let Copilot fix the resulting type errors.
+- Write a `Dockerfile` for `hello-app` using `@workspace` so Copilot tailors it to the real layout.
+
+---
+
 ## 📚 Further reading
 
-- [GitHub Copilot docs](https://docs.github.com/copilot)
+- [GitHub Copilot docs](https://docs.github.com/en/copilot)
 - [Copilot Chat cookbook](https://docs.github.com/copilot/copilot-chat-cookbook)
 - [Express documentation](https://expressjs.com/)
 - [Azure App Service for Node](https://learn.microsoft.com/azure/app-service/quickstart-nodejs)
