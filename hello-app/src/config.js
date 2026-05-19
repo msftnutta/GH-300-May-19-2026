@@ -3,4 +3,5 @@
 // URLs as additional fields below.
 export const config = {
   port: Number(process.env.PORT) || 3000,
+  azureMapsKey: process.env.AZURE_MAPS_KEY || '',
 };
