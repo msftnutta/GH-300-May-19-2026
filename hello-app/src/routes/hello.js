@@ -24,7 +24,6 @@ router.get('/', (_req, res) => {
   <title>Hello App</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YcnS/1WR6I3HMKzL0UCkz/BECQb+JfLGOd0"
         crossorigin="anonymous" />
   <style>
     body {
@@ -67,7 +66,6 @@ router.get('/', (_req, res) => {
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous"></script>
   <script>
     function updateClock() {
